@@ -1,0 +1,95 @@
+{% import "partials/_mixins.html" as mixins %}
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% if title %}{{ title }}{% else %}Template{% endif %}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" media="all" href="css/app.css">
+    {# {% include "../partials/_media-tags.html" %} #}
+  </head>
+  <body>
+
+    <!-- BEGIN content -->
+    <div class="content">
+      {% block content %}{% endblock %}
+    </div>
+    <!-- END content -->
+    {% include "partials/_callback-pop-up.html" %}
+
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="js/app.js"></script>
+
+
+    <!-- подключать инлайном после основного скрипта -->
+    <script>
+      /*begin map*/
+      var map;
+      var initMap =  function () {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 50.526265, lng: 30.376186},  
+          zoom: 11,
+          scrollwheel: false
+        });
+        setMarkers(map, places);
+      }
+      var places = [
+      ['Станции метро', 50.513032, 30.364170, 'img/map-pin-center.png'],
+      ['Банки', 50.530998, 30.170254, 'img/map-pin-1.png'],
+      ['Супермаркеты', 50.544618, 30.202642, 'img/map-pin-2.png'],
+      ['Остановки', 50.540975, 30.149865, 'img/map-pin-3.png'],
+      ['Поликлиники', 50.575654, 30.160283, 'img/map-pin-4.png'],
+      ['Кафе', 50.578001, 30.166636, 'img/map-pin-5.png'],
+      ['Парикмахерские', 50.568484, 30.143020, 'img/map-pin-6.png'],
+      ['Заправки', 50.578083, 30.179902, 'img/map-pin-7.png'],
+      ['Больницы', 50.545450, 30.197009, 'img/map-pin-8.png'],
+      ['Магазины', 50.561118, 30.149142, 'img/map-pin-10.png'],
+      ['Спортзал', 50.564490, 30.195720, 'img/map-pin-11.png'],
+      ['Библиотека', 50.556206, 30.200379, 'img/map-pin-12.png'],
+      ['Стоматология', 50.564490, 30.195720, 'img/map-pin-13.png'],
+      ['Парк', 50.553264, 30.141007, 'img/map-pin-14.png'],
+      ['Детские площадки', 50.549379, 30.147765, 'img/map-pin-15.png'],
+      ['Forest land', 50.548385, 30.170689, 'img/map-pin-main.png']
+      ];
+      function setMarkers(map) {
+        var marker, i;
+        for (i = 0; i < places.length; i++) {
+          var description = places[i][0]
+          var lat = places[i][1]
+          var long = places[i][2]
+          var img =  places[i][3]
+          var latshort = places[i][1].toFixed(5);
+          var longshort = places[i][2].toFixed(5);
+          latlngset = new google.maps.LatLng(lat, long);
+          marker = new google.maps.Marker({
+            position: latlngset,
+            map: map,
+            icon: img
+          });
+          
+          // центр карты п по маркеру  map.setCenter(marker.getPosition());
+          /*закомментить если не нужны всплывающие окна
+          var content = "<div class='map-marker-wrapper'><p class='map-marker-descr'>" +description +"</p>" + "<span class='map-marker-coord'>" + latshort + ", " + longshort  + "</span></div>";
+          var infowindow = new google.maps.InfoWindow();
+          google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 
+            return function() {
+              infowindow.setContent(content);
+              infowindow.open(map,marker);
+            };
+          })(marker,content,infowindow)); 
+          закомментить если не нужны всплывающие окна*/
+
+        }
+      }
+      /*end map*/
+    </script>    
+    <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA04VMqMvV-ifF4mtvOnsUkf3Lw9F9ivAg&callback=initMap"
+type="text/javascript"></script>
+    <!-- END scripts -->
+    <!-- END scripts -->
+
+  </body>
+</html>

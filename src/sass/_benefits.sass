@@ -1,0 +1,42 @@
+.benefits
+	padding-bottom: 3em 
+	+r(1024)
+		padding-bottom: 1em 
+	.title-h2
+		color: #000
+		margin-top: 1.13em
+	&__wrapper
+		margin: 10px -2% 
+		font-size: 0
+		+r(1400)
+			margin: 0
+			text-align: center 
+.benefit
+	+css-lock(14,18,480,1600)
+	display: inline-block
+	max-width: 302px
+	vertical-align: top
+	margin: 1.5em 2% 
+	&__icon
+		position: relative
+		width: 100%
+		min-height: 200px  
+		color: #3e3e3e
+		&:before
+			content: ""
+			display: block 
+			+s(ellipse)
+			+vcenter
+		img
+			+vcenter
+	&__title
+		text-align: center
+		font-size: 30px
+		+css-lock(20,30,480,1600)
+		font-weight: 600
+		text-transform: uppercase
+		margin-top: 0.4em 
+	&__text
+		margin-top: 1.5em 
+		text-align: justify
+	
