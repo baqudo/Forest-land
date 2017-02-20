@@ -1,0 +1,46 @@
+.about-builder
+	margin: em(85, 18) 0 em(55, 18)
+	+r(715)
+		margin: 30px 0
+	.wrapper
+		padding: 0 em(150, 18) 0 em(170, 18)
+		+r(1024)
+			padding: 0 20px
+	.to-left
+		float: left
+		margin-right: em(63, 18)
+		+r(715)
+			margin-right: 20px
+		+r(530)
+			float: none
+			margin-right: 0 
+	&__img
+		display: block
+		margin: 1.2em auto 
+	&__button
+		display: block
+		margin: em(53, 18) auto
+		width: em(281, 18)
+		height: em(62, 18)
+		border-radius: 7px
+		border: 1px solid #3e3e3e
+		background-color: #ffffff
+		color: #505050
+		font-weight: 600
+		text-transform: uppercase
+		transition: background-color 0.3s
+		+r(715)
+			margin: 10px auto
+		&:hover
+			background-color: #ccc 
+			border-width: 2px 
+	&__title
+		color: #000
+		text-align: left
+		+r(530)
+			text-align: center
+	&__text
+		margin: 1.65em 0
+		line-height: 1.25
+		+r(530)
+			text-align: justify

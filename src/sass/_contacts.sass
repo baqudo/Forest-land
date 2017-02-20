@@ -1,0 +1,60 @@
+.contacts
+	background-color: #ebebeb
+	padding: 4em 0
+	.title-h2
+		text-align: left
+		line-height: 1.3 
+		margin-bottom: 0.8em
+	.wrapper
+		max-width: 1000px 
+	&__inner	
+		float: left
+		width: 40% 
+		padding-right: em(58, 18)  
+	&__form
+		float: right
+		width: 60%
+		margin-top: 1em
+	&__address
+		color: #636363
+		font-size: 24px
+		+css-lock(18,24,480,1024)
+		font-weight: 400
+		line-height: em(28,18)
+	&__img
+		display: block
+		margin: em(58,18) auto em(72,18) em(75,18)
+	&__number
+		color: #db5a31
+		font-size: 48px
+		font-weight: 600
+		text-transform: uppercase
+
+.taxi
+	max-width: 1000px 
+	margin: 0 auto 
+	+clr
+	.title-h2
+		text-align: center
+		margin: 0.9em 0 1.05em
+	&__block
+		float: left
+		max-width: 442px
+		&:last-of-type
+			margin-left: em(103,18)
+			padding-right: 10% 
+			// padding: 0 8% 
+	&__title
+		color: #588f27
+		font-size: 24px
+		+css-lock(18,24,480,1024)
+		font-weight: 600
+	&__text
+		margin-top: 1.3em 
+		color: #646464
+		font-weight: 600
+		line-height: 1.5
+		min-height: 108px 
+	&__about
+		color: #3e3e3e
+		font-weight: 700

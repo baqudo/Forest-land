@@ -1,0 +1,91 @@
+.primary
+	+css-lock(14, 18, 480, 1600)
+	background-color: $main-color 
+	padding: 3.4em 0
+	+r(1200)
+		padding: 1em 0
+	&__text
+		margin: 3em 0
+		text-align: justify
+		line-height: 1.3 
+		+clr
+		+r(1200)
+			margin: 1em 0
+		&_left
+			width: 47.5%
+			float: left
+			+r(800)
+				float: none
+				width: 100%
+				margin: 10px 0 
+		&_right
+			float: right
+			width: 47.5%
+			+r(800)
+				float: none
+				width: 100% 
+				margin: 10px 0
+		&.is-little
+			padding: 0 em(170, 18)
+			margin: 3em 0 1.5em
+			.primary__text_left, .primary__text_right
+				width: 49% 
+				text-align: left
+
+	&__form
+		+clr
+		background-color: #FFF 
+		padding: em(30,18) 
+
+		textarea.primary__input
+			height: auto 
+			line-height: 1.66
+			padding: 1px 16px
+		.primary__formhead:last-of-type
+			margin-bottom: 0.7em 
+	&__formhead
+		color: #3e3e3e
+		font-size: 30px
+		+css-lock(20,30,480,1600)
+		font-weight: 600
+		line-height: 1
+	&__label
+		display: block
+		color: #3e3e3e
+		line-height: 36px
+		font-weight: normal 
+
+	&__input
+		display: block
+		padding: 0 16px 
+		width: 100% 
+		height: em(40, 16)
+		border: 1px solid #a9a9a9
+		background-color: #f5f5f5
+		+placeholder
+			font-style: italic
+	&__submit
+		width: em(256, 16)
+		height: em(40, 16)
+		background-color: #db5a31
+		color: #ffffff
+		font-weight: 600
+		line-height: em(40, 16)
+		margin-top: em(12, 16)
+		float: right
+
+.primary-button
+	display: block
+	color: #ffffff
+	font-family: "Open Sans"
+	font-weight: 600
+	text-transform: uppercase
+	width: 15.56em
+	height: 3.5em
+	border-radius: 7px
+	border: 1px solid rgba(76, 76, 76, 0.2)
+	background-color: rgba(88, 143, 39, 0.2)
+	margin: 1em auto 
+	transition: 0.3s
+	&:hover
+		background-color: rgba(88, 143, 39, 0.52)
