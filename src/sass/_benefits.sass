@@ -17,6 +17,8 @@
 	max-width: 302px
 	vertical-align: top
 	margin: 1.5em 2% 
+	+r(480)
+		margin-top: 0.5em 
 	&__icon
 		position: relative
 		width: 100%
@@ -29,6 +31,12 @@
 			+vcenter
 		img
 			+vcenter
+		+r(770)
+			transform: scale(0.75)
+			min-height: 150px  
+		+r(480)
+			transform: scale(0.5)
+			min-height: 100px  
 	&__title
 		text-align: center
 		font-size: 30px
@@ -39,4 +47,6 @@
 	&__text
 		margin-top: 1.5em 
 		text-align: justify
+		+r(480)
+			margin-top: 0.5em 
 	

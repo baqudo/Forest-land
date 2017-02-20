@@ -5,16 +5,27 @@
 		text-align: left
 		line-height: 1.3 
 		margin-bottom: 0.8em
+		+r(900)
+			text-align: center
 	.wrapper
 		max-width: 1000px 
 	&__inner	
 		float: left
 		width: 40% 
 		padding-right: em(58, 18)  
+		+r(900)
+			float: none
+			width: 100% 
+			text-align: center
+			padding-right: 0 
 	&__form
 		float: right
 		width: 60%
 		margin-top: 1em
+		+r(900)
+			float: none
+			width: 95% 
+			margin: 1em auto
 	&__address
 		color: #636363
 		font-size: 24px
@@ -23,10 +34,14 @@
 		line-height: em(28,18)
 	&__img
 		display: block
-		margin: em(58,18) auto em(72,18) em(75,18)
+		margin: em(58,18) auto em(72,18)
+		+r(900)
+			margin: 1em  auto
+
 	&__number
 		color: #db5a31
 		font-size: 48px
+		+css-lock(24,48,480,1400)
 		font-weight: 600
 		text-transform: uppercase
 
@@ -40,10 +55,19 @@
 	&__block
 		float: left
 		max-width: 442px
+		padding: 0 5px 
+		+r(900)
+			margin: 0 
+			width: 100% 
+			margin-bottom: 1.5em 
+			margin-left: 2.5% 
 		&:last-of-type
 			margin-left: em(103,18)
 			padding-right: 10% 
-			// padding: 0 8% 
+			+r(974)
+				margin-left: 1em
+			+r(900)
+				margin-left: 2.5% 
 	&__title
 		color: #588f27
 		font-size: 24px
@@ -55,6 +79,9 @@
 		font-weight: 600
 		line-height: 1.5
 		min-height: 108px 
+		+r(900)
+			min-height: auto
+			margin-bottom: 0.5em  
 	&__about
 		color: #3e3e3e
 		font-weight: 700
