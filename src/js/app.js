@@ -26,3 +26,25 @@ $(function () {
 		callbackPopup.fadeOut(duration);
 	})
 });
+
+$(function () {
+
+	$('.tabs-controls__item').on('click', function () {
+		var item = $(this),
+		contentItem = $('.tabs__item'),
+		itemPosition = item.index();
+
+		item.addClass('is-active').siblings().removeClass('is-active');
+		contentItem.eq(itemPosition).addClass('is-active').siblings().removeClass('is-active');
+	});
+
+});
+
+$(function () {
+		$('.js-slider').slick({	
+			centerMode: true,
+			centerPadding: '2%',
+			slidesToShow: 3,
+			slidesToScroll: 1
+	});
+});
