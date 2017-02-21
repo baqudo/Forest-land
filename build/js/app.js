@@ -2751,6 +2751,7 @@ function sayHello() {
 
 sayHello();
 
+// popup ----------------------------------
 $(function () {
 	var callbackButton = $('.js-callback-trigger'),
 	    callbackPopup = $('.js-callback-popup'),
@@ -2771,23 +2772,43 @@ $(function () {
 	});
 });
 
+//tabs and sliders-----------------------------------
 $(function () {
-
-	$('.tabs-controls__item').on('click', function () {
-		var item = $(this),
-		    contentItem = $('.tabs__item'),
-		    itemPosition = item.index();
-
-		item.addClass('is-active').siblings().removeClass('is-active');
-		contentItem.eq(itemPosition).addClass('is-active').siblings().removeClass('is-active');
-	});
-});
-
-$(function () {
-	$('.js-slider').slick({
-		centerMode: true,
-		centerPadding: '2%',
+	var tabContol = $('.js-tabs__controls'),
+	    contentList = $('.js-tabs__list'),
+	    contentItem = contentList.children('li.js-tabs__item'),
+	    $sliders = $('.js-slider');
+	var slickOpt = {
+		infinite: false,
 		slidesToShow: 3,
 		slidesToScroll: 1
-	});
+	};
+
+	$sliders.filter('.is-active').slick(slickOpt);
+
+	function swapTab() {
+		var $target = $(this),
+		    itemPosition = $target.index();
+
+		$target.addClass('is-active').siblings().removeClass('is-active');
+		contentItem.eq(itemPosition).addClass('is-active').siblings().removeClass('is-active');
+	}
+
+	function initSlider(event) {
+		var $target = $(this),
+		    itemPosition = $target.index(),
+		    dataTarget = $target.data('tabs'); // нужно добавить дата-значения (если их нет) что бы связывать таб с блоком(слайдером)
+
+		$target.addClass('is-active').siblings().removeClass('is-active');
+		contentItem.eq(itemPosition).addClass('is-active').siblings().removeClass('is-active');
+
+		var $slider = $sliders.filter('[data-tabs="' + dataTarget + '"]');
+		// тут сделать проверку на иницализацию слайдера - если инициализирован, то не нужно инициализировать
+		if (!$slider.slick(slickOpt)) {
+			$slider.slick(slickOpt);
+		}
+	}
+
+	tabContol.one('click', initSlider);
+	tabContol.on('click', swapTab);
 });

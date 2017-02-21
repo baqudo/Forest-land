@@ -151,15 +151,48 @@
         <!-- BEGIN room-filter -->
         <div class="room-filter tabs">
           <ul class="tabs-controls">
-            <li class="tabs-controls__item 1room is-active">1-комнатные квартиры</li>
-            <li class="tabs-controls__item 2room">2-комнатные квартиры</li>
-            <li class="tabs-controls__item 3room">3-комнатные квартиры</li>
+            <li class="tabs-controls__item js-tabs__controls is-active" data-tabs="1-room">1-комнатные квартиры</li>
+            <li class="tabs-controls__item js-tabs__controls" data-tabs="2-room">2-комнатные квартиры</li>
+            <li class="tabs-controls__item js-tabs__controls" data-tabs="3-room">3-комнатные квартиры</li>
           </ul>
-          <ul class="tabs__list">
+          <ul class="tabs__list js-tabs__list">
             <!-- BEGIN tabs__item -->
-            <li class="tabs__item is-active">
+            <li class="tabs__item js-tabs__item is-active">
               <!-- BEGIN slider -->
-              <div class="slider js-slider">
+              <div class="slider js-slider is-active">
+                <div class="room">
+                  <div class="room__block"> <img class="room__img" src="img/room-img.png" alt="room"> <button class="room__desc">Подробнее</button> </div>
+                  <div class="room__title">Ватерлоо</div>
+                  <div class="room__area">39,19 м<sup>2</sup></div>
+                </div>
+                <div class="room">
+                  <div class="room__block"> <img class="room__img" src="img/room-img.png" alt="room"> <button class="room__desc">Подробнее</button> </div>
+                  <div class="room__title">Вирджиния</div>
+                  <div class="room__area">37,77 м<sup>2</sup></div>
+                </div>
+                <div class="room">
+                  <div class="room__block"> <img class="room__img" src="img/room-img.png" alt="room"> <button class="room__desc">Подробнее</button> </div>
+                  <div class="room__title">Оксфорд</div>
+                  <div class="room__area">39,69 м<sup>2</sup></div>
+                </div>
+                <div class="room">
+                  <div class="room__block"> <img class="room__img" src="img/room-img.png" alt="room"> <button class="room__desc">Подробнее</button> </div>
+                  <div class="room__title">Ватерлоо111</div>
+                  <div class="room__area">39,19 м<sup>2</sup></div>
+                </div>
+                <div class="room">
+                  <div class="room__block"> <img class="room__img" src="img/room-img.png" alt="room"> <button class="room__desc">Подробнее</button> </div>
+                  <div class="room__title">Ватерлоо122</div>
+                  <div class="room__area">39,19 м<sup>2</sup></div>
+                </div>
+              </div>
+              <!-- END slider -->
+            </li>
+            <!-- END tabs__item -->
+            <!-- BEGIN tabs__item -->
+            <li class="tabs__item js-tabs__item">
+              <!-- BEGIN slider -->
+              <div class="slider js-slider" data-tabs="2-room">
                 <div class="room">
                   <div class="room__block"> <img class="room__img" src="img/room-img.png" alt="room"> <button class="room__desc">Подробнее</button> </div>
                   <div class="room__title">Ватерлоо</div>
@@ -185,12 +218,9 @@
             </li>
             <!-- END tabs__item -->
             <!-- BEGIN tabs__item -->
-            <li class="tabs__item"> </li>
-            <!-- END tabs__item -->
-            <!-- BEGIN tabs__item -->
-            <li class="tabs__item">
+            <li class="tabs__item js-tabs__item">
               <!-- BEGIN slider -->
-              <div class="slider js-slider">
+              <div class="slider js-slider" data-tabs="3-room">
                 <div class="room">
                   <div class="room__block"> <img class="room__img" src="img/room-img.png" alt="room"> <button class="room__desc">Подробнее</button> </div>
                   <div class="room__title">Ватерлоо3333</div>

@@ -12,7 +12,7 @@ $slick-prev-character: "←" !default;
 $slick-next-character: "→" !default;
 $slick-dot-character: "•" !default;
 $slick-dot-size: 6px !default;
-$slick-opacity-default: 0.75 !default;
+$slick-opacity-default: 1 !default;
 $slick-opacity-on-hover: 1 !default;
 $slick-opacity-not-active: 0.25 !default;
 
@@ -48,18 +48,24 @@ $slick-opacity-not-active: 0.25 !default;
 .slick-next {
     position: absolute;
     display: block;
-    height: 20px;
-    width: 20px;
+    // height: 20px;
+    // width: 20px;
+
     line-height: 0px;
     font-size: 0px;
     cursor: pointer;
     background: transparent;
     color: transparent;
-    top: 50%;
+    top: 35%;
     margin-top: -10px;
     padding: 0;
     border: none;
+    border: 60px solid #FFF;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+    border-left-width: 0; 
     outline: none;
+    transition: 0.3s;
     &:hover, &:focus {
         outline: none;
         background: transparent;
@@ -68,26 +74,42 @@ $slick-opacity-not-active: 0.25 !default;
             opacity: $slick-opacity-on-hover;
         }
     }
-    &.slick-disabled:before {
-        opacity: $slick-opacity-not-active;
+    &.slick-disabled {
+        opacity: 0.6;
+        &:hover{
+            border-color: none;
+        }
     }
 }
 
-.slick-prev:before, .slick-next:before {
-    font-family: $slick-font-family;
-    font-size: 20px;
-    line-height: 1;
-    color: $slick-arrow-color;
-    opacity: $slick-opacity-default;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+.slick-prev {
+    &:hover{
+        border-right-color: #ffe765;
+    }
 }
+.slick-next {
+    border-left-width: 60px;
+    border-right-width: 0; 
+    &:hover{
+        border-left-color: #ffe765;
+    }
+
+}
+// .slick-prev:before, .slick-next:before {
+//     font-family: $slick-font-family;
+//     font-size: 20px;
+//     line-height: 1;
+//     color: $slick-arrow-color;
+//     opacity: $slick-opacity-default;
+//     -webkit-font-smoothing: antialiased;
+//     -moz-osx-font-smoothing: grayscale;
+// }
 
 .slick-prev {
-    left: -25px;
+    left: -106px;
     [dir="rtl"] & {
         left: auto;
-        right: -25px;
+        right: -106px;
     }
     &:before {
         content: $slick-prev-character;
@@ -98,9 +120,9 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 .slick-next {
-    right: -25px;
+    right: -106px;
     [dir="rtl"] & {
-        left: -25px;
+        left: -106px;
         right: auto;
     }
     &:before {
