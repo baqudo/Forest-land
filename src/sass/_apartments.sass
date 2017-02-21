@@ -1,6 +1,7 @@
 .apartments
-
+	padding: 1.8em 0 3.5em 
 .tabs
+	margin-top: 1.6em 
 	&-controls
 		font-size: 0 
 		padding: 0 
@@ -8,6 +9,8 @@
 		border-bottom: 2px solid #588f27
 		margin: 0 auto
 		max-width: 1113px
+		+r(685)
+			padding-bottom: 10px
 		&__item
 			display: inline-block
 			width: em(279, 18)
@@ -22,6 +25,9 @@
 			border-top-left-radius: 5em
 			border-top-right-radius: 5em
 			transition: 0.3s
+			+r(685)
+				border-radius: 5em
+				margin: 0.25em 
 			&:hover
 				cursor: pointer
 				background-color: rgba(88, 143, 39, 0.51)
@@ -35,6 +41,10 @@
 		display: none
 		margin: 0 auto
 		max-width: 1113px
+		+r(1350)
+			max-width: 85% 
+		+r(805)
+			max-width: 100% 
 		&.is-active
 			display: block
 
@@ -43,15 +53,12 @@
 
 .room
 	margin: 0 1%
-
-	
+	+r(805)
+		margin: 0 0.5% 	
 	&__block
 		box-sizing: border-box
 		padding: em(38,18) 0
 		background-color: #FFF
-		// max-width: 338px
-		// width: 338px 
-		// max-height: 338px 
 		position: relative
 		margin-bottom: em(35,18) 
 	&__img
@@ -70,12 +77,21 @@
 		font-weight: 600
 	&__title
 		font-size: 24px
+		+css-lock(18,24,480,1400)
 		color: #ffffff
 		font-weight: 400
 		text-transform: uppercase
 		line-height: 1 
 	&__area
 		font-size: 24px
+		+css-lock(18,24,480,1400)
 		color: #588f27
 		font-weight: 700
 		line-height: 1 
+
+
++r(1350)
+	.slick-prev 
+		left: -66px
+	.slick-next
+		right: -66px

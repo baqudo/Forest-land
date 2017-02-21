@@ -997,6 +997,14 @@ body {
   font-weight: 700;
 }
 
+.apartments {
+  padding: 1.8em 0 3.5em;
+}
+
+.tabs {
+  margin-top: 1.6em;
+}
+
 .tabs-controls {
   font-size: 0;
   padding: 0;
@@ -1079,6 +1087,7 @@ body {
 
 .room__title {
   font-size: 24px;
+  font-size: calc(18px + (24 - 18) * ((100vw - 480px) / (1400 - 480)));
   color: #ffffff;
   font-weight: 400;
   text-transform: uppercase;
@@ -1087,6 +1096,7 @@ body {
 
 .room__area {
   font-size: 24px;
+  font-size: calc(18px + (24 - 18) * ((100vw - 480px) / (1400 - 480)));
   color: #588f27;
   font-weight: 700;
   line-height: 1;
@@ -1113,6 +1123,12 @@ body {
 @media (min-width: 1400px){
   .contacts__number{
     font-size: 48px;
+  }
+  .room__title{
+    font-size: 24px;
+  }
+  .room__area{
+    font-size: 24px;
   }
 }
 
@@ -1157,6 +1173,18 @@ body {
   .benefits__wrapper{
     margin: 0;
     text-align: center;
+  }
+}
+
+@media only screen and (max-width: 1350px){
+  .tabs__item{
+    max-width: 85%;
+  }
+  .slick-prev{
+    left: -66px;
+  }
+  .slick-next{
+    right: -66px;
   }
 }
 
@@ -1244,6 +1272,15 @@ body {
   }
 }
 
+@media only screen and (max-width: 805px){
+  .tabs__item{
+    max-width: 100%;
+  }
+  .room{
+    margin: 0 0.5%;
+  }
+}
+
 @media only screen and (max-width: 800px){
   .primary__text_left{
     float: none;
@@ -1292,6 +1329,16 @@ body {
   }
 }
 
+@media only screen and (max-width: 685px){
+  .tabs-controls{
+    padding-bottom: 10px;
+  }
+  .tabs-controls__item{
+    border-radius: 5em;
+    margin: 0.25em;
+  }
+}
+
 @media only screen and (max-width: 530px){
   .about-builder .to-left{
     float: none;
@@ -1302,6 +1349,21 @@ body {
   }
   .about-builder__text{
     text-align: justify;
+  }
+}
+
+@media only screen and (max-width: 480px){
+  .benefit{
+    margin-top: 0.5em;
+  }
+  .benefit__icon{
+    -webkit-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    transform: scale(0.5);
+    min-height: 100px;
+  }
+  .benefit__text{
+    margin-top: 0.5em;
   }
 }
 
@@ -1342,20 +1404,11 @@ body {
   .tabs-controls__item{
     font-size: 14px;
   }
-}
-
-@media only screen and (max-width: 480px){
-  .benefit{
-    margin-top: 0.5em;
+  .room__title{
+    font-size: 18px;
   }
-  .benefit__icon{
-    -webkit-transform: scale(0.5);
-    -ms-transform: scale(0.5);
-    transform: scale(0.5);
-    min-height: 100px;
-  }
-  .benefit__text{
-    margin-top: 0.5em;
+  .room__area{
+    font-size: 18px;
   }
 }
 

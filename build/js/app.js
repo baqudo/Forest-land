@@ -2781,7 +2781,45 @@ $(function () {
 	var slickOpt = {
 		infinite: false,
 		slidesToShow: 3,
-		slidesToScroll: 1
+		slidesToScroll: 1,
+		responsive: [{
+			breakpoint: 1350,
+			settings: {
+				arrows: true,
+				slidesToShow: 3
+			}
+		}, {
+			breakpoint: 1005,
+			settings: {
+				arrows: true,
+				slidesToShow: 2
+			}
+		}, {
+			breakpoint: 768,
+			settings: {
+				infinite: true,
+				arrows: false,
+				slidesToShow: 2
+			}
+		}, {
+			breakpoint: 480,
+			settings: {
+				infinite: true,
+				arrows: false,
+				centerMode: true,
+				centerPadding: '50px',
+				slidesToShow: 1
+			}
+		}, {
+			breakpoint: 380,
+			settings: {
+				infinite: true,
+				arrows: false,
+				centerMode: true,
+				centerPadding: '10%',
+				slidesToShow: 1
+			}
+		}]
 	};
 
 	$sliders.filter('.is-active').slick(slickOpt);
