@@ -6,25 +6,32 @@
 
 sayHello();
 
-// popup ----------------------------------
 $(function () {
-	var
-		callbackButton = $('.js-callback-trigger'),
-		callbackPopup = $('.js-callback-popup'),
-		callbackClose = $('.js-callback-popup-close'),
-		callbackSubmit = $('.js-callback-popup-submit'),
+	var popupTrigger = $('.js-popup-button'),
 		duration = 300;
 
-	callbackButton.on('click', function(){
-		callbackPopup.fadeIn(duration);
-	})
+	popupTrigger.on('click', function () {
+		var $this = $(this),
+			popupName = $this.data('popup'),
+		// console.log(popupName);
+			popupWindow = $('#popup-'+popupName),
+		// console.log(popupWindow);
+			popupClose = popupWindow.find('.js-popup-close'),
+			popupSlider = popupWindow.find('.js-popup-slider');
 
-	callbackClose.on('click', function(){
-		callbackPopup.fadeOut(duration);
-	})
+		popupWindow.fadeIn(duration);
 
-	callbackSubmit.on('click', function(){
-		callbackPopup.fadeOut(duration);
+		if (!popupSlider.slick()) {
+			// console.log(popupSlider);
+			$('.js-popup-slider').slick({
+				infinite: false
+			});
+		}
+
+		popupClose.on('click',function () {
+			popupWindow.fadeOut(duration);
+		})
+
 	})
 });
 

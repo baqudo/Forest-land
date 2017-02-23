@@ -1,0 +1,90 @@
+.pop-up
+	color: #FFF 
+	display: none
+	position: fixed
+	z-index: 99999999
+	padding: 20px 0 
+	top: 0 
+	width: 100%
+	height: 100%
+	background-color: rgba(0, 0, 0, 0.8)
+	.title-h2
+		margin-top: 1em 
+
+	&__block
+		width: 100% 
+		// height: 700px
+		max-height: 100% 
+		position: relative
+		// z-index: 9999999999
+		
+	&__slider
+		position: relative
+		max-width: 1312px
+		height: 700px
+		max-height: 750px 
+		margin: 1em auto
+		background-color: #FFF 
+		div
+			margin: 0 auto
+			position: relative
+		img
+			max-width: 100%
+			max-height: 100%
+		.slick-prev, .slick-next 
+			top: 50%
+			margin-top: -10px
+			border: 60px solid #a9cf54
+			border-top: 35px solid transparent
+			border-bottom: 35px solid transparent
+			border-left-width: 0
+			outline: none
+			transition: 0.3s
+			&:hover
+				filter: hue-rotate(-45deg)
+		.slick-next
+			border-left-width: 60px
+			border-right-width: 0
+		+r(1550)
+			width: 85% 
+			height: 100%
+			.slick-prev 
+				left: -66px
+			.slick-next
+				right: -66px
+		+r(1025)
+			width: 100% 
+	&__slide
+		max-height: 90% 
+	&__close
+		position: absolute
+		right: 10%
+		top: 3%
+		display: block
+		width: 37px
+		height: 37px
+		background-color: #FFF 
+		&:before
+			content: ""
+			+vcenter
+			+s(close)
+
+		+r(360)
+			top: 10px
+			right: 10px
+.pages
+	text-align: center
+	font-size: 24px
+	+css-lock(18,24,480,960)
+	line-height: em(20,24)
+	text-transform: uppercase
+
+	&__item
+		color: #ffffff
+		text-decoration: none
+		&:hover
+			color: #a9cf54
+			text-decoration: none
+		&.is-active
+			color: #a9cf54
+			text-decoration: underline

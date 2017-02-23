@@ -793,7 +793,7 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.pop-up {
+.callback-pop-up__inner {
   font-size: calc(14px + (16 - 14) * ((100vw - 480px) / (886 - 480)));
   position: absolute;
   top: 50%;
@@ -807,7 +807,7 @@ body {
   padding: 2.5em;
 }
 
-.pop-up-close {
+.callback-pop-up__close {
   position: fixed;
   right: 2.3125em;
   top: 2.5em;
@@ -820,7 +820,7 @@ body {
   background-position: -402px -225px;
 }
 
-.pop-up__title {
+.callback-pop-up__title {
   color: #3e3e3e;
   font-family: "Open Sans";
   font-size: 24px;
@@ -832,7 +832,7 @@ body {
   margin-bottom: 0.66667em;
 }
 
-.pop-up__img {
+.callback-pop-up__img {
   -webkit-transform: scale(0.74);
   -ms-transform: scale(0.74);
   transform: scale(0.74);
@@ -840,18 +840,131 @@ body {
   margin: 2.8125em 3.125em 0 1.125em;
 }
 
-.pop-up .primary__form {
+.callback-pop-up .primary__form {
   display: inline-block;
   width: 32.9375em;
   padding: 0;
 }
 
-.pop-up .primary__label {
+.callback-pop-up .primary__label {
   font-style: italic;
 }
 
-.pop-up .primary__submit {
+.callback-pop-up .primary__submit {
   margin-top: 2em;
+}
+
+.pop-up {
+  color: #FFF;
+  display: none;
+  position: fixed;
+  z-index: 99999999;
+  padding: 20px 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.pop-up .title-h2 {
+  margin-top: 1em;
+}
+
+.pop-up__block {
+  width: 100%;
+  max-height: 100%;
+  position: relative;
+}
+
+.pop-up__slider {
+  position: relative;
+  max-width: 1312px;
+  height: 700px;
+  max-height: 750px;
+  margin: 1em auto;
+  background-color: #FFF;
+}
+
+.pop-up__slider div {
+  margin: 0 auto;
+  position: relative;
+}
+
+.pop-up__slider img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.pop-up__slider .slick-prev, .pop-up__slider .slick-next {
+  top: 50%;
+  margin-top: -10px;
+  border: 60px solid #a9cf54;
+  border-top: 35px solid transparent;
+  border-bottom: 35px solid transparent;
+  border-left-width: 0;
+  outline: none;
+  transition: 0.3s;
+}
+
+.pop-up__slider .slick-prev:hover, .pop-up__slider .slick-next:hover {
+  -webkit-filter: hue-rotate(-45deg);
+  filter: hue-rotate(-45deg);
+}
+
+.pop-up__slider .slick-next {
+  border-left-width: 60px;
+  border-right-width: 0;
+}
+
+.pop-up__slide {
+  max-height: 90%;
+}
+
+.pop-up__close {
+  position: absolute;
+  right: 10%;
+  top: 3%;
+  display: block;
+  width: 37px;
+  height: 37px;
+  background-color: #FFF;
+}
+
+.pop-up__close:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-image: url("../img/sprite.png");
+  width: 15px;
+  height: 16px;
+  background-position: -402px -225px;
+}
+
+.pages {
+  text-align: center;
+  font-size: 24px;
+  font-size: calc(18px + (24 - 18) * ((100vw - 480px) / (960 - 480)));
+  line-height: 0.83333em;
+  text-transform: uppercase;
+}
+
+.pages__item {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.pages__item:hover {
+  color: #a9cf54;
+  text-decoration: none;
+}
+
+.pages__item.is-active {
+  color: #a9cf54;
+  text-decoration: underline;
 }
 
 .about-builder {
@@ -1102,11 +1215,79 @@ body {
   line-height: 1;
 }
 
+.galleries {
+  *zoom: 1;
+}
+
+.galleries:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.galleries__item {
+  float: left;
+  width: 50%;
+  position: relative;
+  max-height: 300px;
+}
+
+.galleries__item:hover {
+  cursor: pointer;
+}
+
+.galleries__bg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.galleries__block {
+  height: 100%;
+  padding: 1em 0;
+  text-align: center;
+  transition: 0.5s;
+  background-color: rgba(4, 191, 191, 0.5);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.galleries__block:hover, .galleries__block:focus {
+  background-color: rgba(4, 191, 191, 0);
+}
+
+.galleries__info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: #FFF;
+}
+
+.galleries__info:hover, .galleries__info:focus {
+  color: #FFF;
+}
+
+.galleries__text {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
 @media (min-width: 886px){
-  .pop-up{
+  .callback-pop-up__inner{
     font-size: 16px;
   }
-  .pop-up__title{
+  .callback-pop-up__title{
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 960px){
+  .pages{
     font-size: 24px;
   }
 }
@@ -1163,6 +1344,19 @@ body {
   }
 }
 
+@media only screen and (max-width: 1550px){
+  .pop-up__slider{
+    width: 85%;
+    height: 100%;
+  }
+  .pop-up__slider .slick-prev{
+    left: -66px;
+  }
+  .pop-up__slider .slick-next{
+    right: -66px;
+  }
+}
+
 @media only screen and (max-width: 1440px){
   .wrapper{
     padding: 0 5px;
@@ -1200,6 +1394,12 @@ body {
 @media only screen and (max-width: 1040px){
   .header .logo{
     margin-right: 10px;
+  }
+}
+
+@media only screen and (max-width: 1025px){
+  .pop-up__slider{
+    width: 100%;
   }
 }
 
@@ -1262,11 +1462,11 @@ body {
 }
 
 @media only screen and (max-width: 886px){
-  .pop-up{
+  .callback-pop-up__inner{
     width: 95%;
     padding: 15px;
   }
-  .pop-up__img{
+  .callback-pop-up__img{
     margin: 0;
     margin-top: 2.8125em;
   }
@@ -1278,6 +1478,10 @@ body {
   }
   .room{
     margin: 0 0.5%;
+  }
+  .galleries__item{
+    float: none;
+    width: 100%;
   }
 }
 
@@ -1308,10 +1512,10 @@ body {
 }
 
 @media only screen and (max-width: 764px){
-  .pop-up__img{
+  .callback-pop-up__img{
     display: none;
   }
-  .pop-up .primary__form{
+  .callback-pop-up .primary__form{
     display: block;
     width: 100%;
   }
@@ -1386,10 +1590,13 @@ body {
   .benefit__title{
     font-size: 20px;
   }
-  .pop-up{
+  .callback-pop-up__inner{
     font-size: 14px;
   }
-  .pop-up__title{
+  .callback-pop-up__title{
+    font-size: 18px;
+  }
+  .pages{
     font-size: 18px;
   }
   .contacts__address{
@@ -1413,7 +1620,11 @@ body {
 }
 
 @media only screen and (max-width: 360px){
-  .pop-up-close{
+  .callback-pop-up__close{
+    top: 10px;
+    right: 10px;
+  }
+  .pop-up__close{
     top: 10px;
     right: 10px;
   }

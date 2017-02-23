@@ -7,20 +7,20 @@
 	height: 100% 
 	background-color: rgba(0, 0, 0, 0.8)
 
-.pop-up
-	+css-lock(14, 16, 480, 886)
-	+vcenter
-	// width: 886px
-	width: em(886, 16) 
-	// height: 398px
-	min-height: em(398, 16) 
-	background-color: #ffffff
-	padding: em(40, 16)
-	+r(886)
-		width: 95% 
-		padding: 15px 
+	&__inner
+		+css-lock(14, 16, 480, 886)
+		+vcenter
+		// width: 886px
+		width: em(886, 16) 
+		// height: 398px
+		min-height: em(398, 16) 
+		background-color: #ffffff
+		padding: em(40, 16)
+		+r(886)
+			width: 95% 
+			padding: 15px 
 		
-	&-close
+	&__close
 		position: fixed
 		right: em(37, 16)
 		top: em(40, 16) 

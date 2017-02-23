@@ -33,7 +33,7 @@
       <!-- END header -->
       <!-- BEGIN callback -->
       <div class="callback">
-        <div class="callback__number">(098) 0 5555 00</div> <button class="button callback__button js-callback-trigger"><span class="talking-icon"></span>обратный звонок</button>
+        <div class="callback__number">(098) 0 5555 00</div> <button class="button callback__button js-popup-button" data-popup="callback"><span class="talking-icon"></span>обратный звонок</button>
         <div class="callback__img">
           <div class="callback__text">Ход строительства</div>
         </div>
@@ -250,6 +250,34 @@
         <!-- END room-filter -->
       </div>
       <!-- END apartments primary -->
+      <!-- BEGIN galleries -->
+      <div class="galleries">
+        <!-- BEGIN galleries__item gallery -->
+        <div class="galleries__item gallery js-popup-button" data-popup="gallery"> <img class="galleries__bg" src="img/galery-img.png" alt="galeryimg">
+          <!-- BEGIN galleries__block -->
+          <div class="galleries__block">
+            <div class="galleries__info">
+              <h3 class="title-h2 galleries__title">Галерея</h3>
+              <div class="galleries__text">Перейти в галерею</div>
+            </div>
+          </div>
+          <!-- END galleries__block -->
+        </div>
+        <!-- END galleries__item gallery-->
+        <!-- BEGIN galleries__item videos -->
+        <div class="galleries__item videos js-popup-button" data-popup="video"> <img class="galleries__bg" src="img/video-img.png" alt="videoimg">
+          <!-- BEGIN galleries__block -->
+          <div class="galleries__block">
+            <div class="galleries__info">
+              <h3 class="title-h2 galleries__title">Видео</h3>
+              <div class="galleries__text">Смотреть видео ролики</div>
+            </div>
+          </div>
+          <!-- END galleries__block -->
+        </div>
+        <!-- END galleries__item videos-->
+      </div>
+      <!-- END galleries -->
       <!-- BEGIN about-builder -->
       <div class="about-builder">
         <!-- BEGIN wrapper -->
@@ -324,11 +352,11 @@
     </div>
     <!-- END content -->
     <!-- BEGIN callback-pop-up -->
-    <div class="callback-pop-up js-callback-popup">
+    <div id="popup-callback" class="callback-pop-up js-popup-callback" data-popup="callback">
       <!-- BEGIN pop-up -->
-      <div class="pop-up">
-        <a class="pop-up-close js-callback-popup-close" href="#"> <span></span><span></span> </a> <img class="pop-up__img" src="img/logo-big.png" alt="logo">
-        <h3 class="pop-up__title">Заказать обратную связь</h3>
+      <div class="callback-pop-up__inner">
+        <a class="callback-pop-up__close js-popup-close" href="#"> <span></span><span></span> </a> <img class="callback-pop-up__img" src="img/logo-big.png" alt="logo">
+        <h3 class="callback-pop-up__title">Заказать обратную связь</h3>
         <form class="primary__form" action="#" method="GET"> <label class="primary__label">Имя<input class="primary__input" type="text" placeholder="Введите свое имя"></label> <label class="primary__label">Телефон<input class="primary__input" type="tel" placeholder="Введите свой телефон"></label>
           <input
             class="primary__submit js-callback-popup-submit" type="submit" name="send" value="ОТПРАВИТЬ"> </form>
@@ -336,6 +364,42 @@
       <!-- END pop-up -->
     </div>
     <!-- END callback-pop-up -->
+    <!-- BEGIN popup-gallery js-pop-up -->
+    <div id="popup-gallery" class="pop-up js-popup-gallery" data-popup="gallery">
+      <!-- BEGIN pop-up__block -->
+      <div class="pop-up__block">
+        <h3 class="title-h2">ГАЛЕРЕЯ</h3> <button class="pop-up__close js-popup-close"></button>
+        <div class="pop-up__slider js-popup-slider">
+          <div><img src="img/galpop.png" alt="galpop"></div>
+          <div><img src="http://placehold.it/1500x500" alt="galpop"></div>
+          <div><img src="img/galpop.png" alt="galpop"></div>
+          <div><img src="http://placehold.it/1500x500" alt="galpop"></div>
+          <div><img src="img/galpop.png" alt="galpop"></div>
+          <div><img src="http://placehold.it/1500x500" alt="galpop"></div>
+        </div>
+        <div class="pop-up__pagination pages"> <a href="#" class="pages__item is-first-page">1</a> <span>. . .</span> <a href="#" class="pages__item is-previos-page">3</a> <a href="#" class="pages__item is-current-page is-active">4</a> <a href="#" class="pages__item is-next-page">5</a> <span>. . .</span>          <a href="#" class="pages__item is-last-page">7</a> </div>
+      </div>
+      <!-- END pop-up__block -->
+    </div>
+    <!-- END pop-up_gallery js-pop-up -->
+    <!-- BEGIN popup-video js-pop-up -->
+    <div id="popup-video" class="pop-up js-popup-video" data-popup="video">
+      <!-- BEGIN my-pop-up__block -->
+      <div class="pop-up__block">
+        <h3 class="title-h2">Видео</h3> <button class="pop-up__close js-popup-close"></button>
+        <div class="pop-up__slider js-popup-slider">
+          <div class="pop-up__slide">
+            <div style="position:relative;height:0;padding-bottom:53.5%"><iframe src="https://www.youtube.com/embed/VoAHi8PkhZY?rel=0?ecver=2" width="640" height="360" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
+          </div>
+          <div class="pop-up__slide">
+            <div style="position:relative;height:0;padding-bottom:53.5%"><iframe src="https://www.youtube.com/embed/Y_Yi7vZOxJo?rel=0?ecver=2" width="640" height="360" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
+          </div>
+        </div>
+        <div class="pop-up__pagination pages"> <a href="#" class="pages__item is-first-page">1</a> <span>. . .</span> <a href="#" class="pages__item is-previos-page">3</a> <a href="#" class="pages__item is-current-page is-active">4</a> <a href="#" class="pages__item is-next-page">5</a> <span>. . .</span>          <a href="#" class="pages__item is-last-page">7</a> </div>
+      </div>
+      <!-- END pop-up__block -->
+    </div>
+    <!-- END pop-up_video js-pop-up -->
     <!-- BEGIN scripts -->
     <script type="text/javascript" src="js/app.js"></script>
     <!-- подключать инлайном после основного скрипта -->

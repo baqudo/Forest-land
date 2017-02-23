@@ -1,0 +1,36 @@
+.galleries
+	+clr
+	&__item
+		float: left
+		width: 50%
+		position: relative
+		max-height: 300px 
+		+r(805)
+			float: none
+			width: 100%
+		&:hover
+			cursor: pointer
+	&__bg
+		max-width: 100%
+		max-height: 100%  
+	&__block
+		height: 100% 
+		padding: 1em 0 
+		text-align: center
+		transition: 0.5s
+		background-color: rgba(4, 191, 191, 0.5)
+		position: absolute
+		bottom: 0
+		width: 100% 
+		&:hover, &:focus
+			background-color: rgba(4, 191, 191, 0)
+	&__info
+		+vcenter
+		color: #FFF
+		&:hover, &:focus
+			color: #FFF
+	&__text
+		display: inline-block
+		font-size: 24px
+		font-weight: 400
+		line-height: 24px
