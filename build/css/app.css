@@ -79,6 +79,12 @@ html {
   fill: #000;
 }
 
+.icon-talking {
+  width: 1em;
+  height: 1em;
+  fill: initial;
+}
+
 /* Slider */
 .slick-slider {
   position: relative;
@@ -375,10 +381,13 @@ body {
 }
 
 .button:hover {
-  border-color: rgba(219, 90, 49, 0.75);
+  border-color: rgba(0, 0, 0, 0.1);
   color: #db5a31;
   background-color: #fff;
-  padding-left: 0;
+}
+
+.button:hover svg {
+  fill: #db5a31;
 }
 
 .talking-icon {
@@ -488,13 +497,13 @@ body {
 
 .callback {
   position: absolute;
-  z-index: 99999;
   color: #ffffff;
   top: 15px;
   right: 1%;
   text-align: center;
   text-transform: uppercase;
   font-weight: 600;
+  transition: 0.5s;
 }
 
 .callback__number {
@@ -506,7 +515,7 @@ body {
   display: block;
   font-size: 18px;
   margin: 0.5em 0;
-  padding-left: 2em;
+  line-height: 44px;
 }
 
 .callback__img {
@@ -528,6 +537,28 @@ body {
   height: 63px;
   line-height: 63px;
   background-color: #04bfbf;
+}
+
+.callback.is-scrolled .callback__number {
+  display: none;
+}
+
+.callback.is-scrolled .callback__img {
+  display: none;
+}
+
+.callback.is-scrolled .callback__button {
+  margin: 0;
+}
+
+.icon-talking {
+  position: relative;
+  top: 6px;
+  margin-right: 6px;
+  fill: #fff;
+  width: 1.7em;
+  height: 1.7em;
+  transition: 0.3s;
 }
 
 .primary {
@@ -747,16 +778,13 @@ body {
 }
 
 .main-plan {
-  position: relative;
-  min-height: 941px;
-  background-color: #547032;
-  background-image: url(../img/genplan.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
+  font-size: calc(14px + (18 - 14) * ((100vw - 480px) / (1600 - 480)));
+  max-height: 52.11111em;
+}
+
+.main-plan img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .footnote {
@@ -1332,6 +1360,9 @@ body {
   .benefit__title{
     font-size: 30px;
   }
+  .main-plan{
+    font-size: 18px;
+  }
   .tabs-controls__item{
     font-size: 18px;
   }
@@ -1589,6 +1620,9 @@ body {
   }
   .benefit__title{
     font-size: 20px;
+  }
+  .main-plan{
+    font-size: 14px;
   }
   .callback-pop-up__inner{
     font-size: 14px;

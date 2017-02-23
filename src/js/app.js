@@ -6,6 +6,18 @@
 
 sayHello();
 
+$(window).scroll(function(){
+	var $callback = $('.callback');
+	var $callbackButton = $callback.find('.callback__button');
+	if ($(this).scrollTop() > 600) {
+		$callback.addClass('is-scrolled');
+	} else {
+		$callback.removeClass('is-scrolled');
+	}
+});
+
+
+// popup
 $(function () {
 	var popupTrigger = $('.js-popup-button'),
 		duration = 300;

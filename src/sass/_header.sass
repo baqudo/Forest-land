@@ -37,13 +37,13 @@
 .callback
 	// display: none
 	position: absolute
-	z-index: 99999 
 	color: #ffffff
 	top: 15px
 	right: 1%
 	text-align: center
 	text-transform: uppercase
 	font-weight: 600
+	transition: 0.5s
 	&__number
 		font-family: "Open Sans"
 		font-size: 30px
@@ -51,7 +51,8 @@
 		display: block
 		font-size: 18px 
 		margin: 0.5em 0
-		padding-left: 2em 
+		line-height: 44px
+		// padding-left: 2em 
 	&__img
 		display: block
 		position: relative
@@ -69,3 +70,19 @@
 		height: 63px
 		line-height: 63px 
 		background-color: #04bfbf
+	&.is-scrolled
+		.callback__number
+			display: none
+		.callback__img
+			display: none
+		.callback__button
+			margin: 0 
+
+.icon-talking
+	position: relative
+	top: 6px 
+	margin-right: 6px 
+	fill: #fff
+	width: 1.7em 
+	height: 1.7em 
+	transition: 0.3s

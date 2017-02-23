@@ -1,13 +1,17 @@
 .main-plan
-	position: relative
-	min-height: 941px
-	background-color: #547032
-	background-image: url(../img/genplan.png) 
-	background-repeat: no-repeat
-	background-size: 100% 
-	background-position: 50% 
-	+cover
-
+	// position: relative
+	+css-lock(14, 18, 480, 1600)
+	max-height: em(938,18)
+	// width: 100% 
+	// background-color: #547032
+	// background-image: url(../img/mainplan.jpg) 
+	// background-repeat: no-repeat
+	// background-size: 100%
+	// background-position: 50% 
+	// +cover
+	img
+		max-width: 100%
+		max-height: 100%  
 .footnote
 	position: relative
 	display: inline-block
