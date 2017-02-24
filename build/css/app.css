@@ -532,6 +532,7 @@ body {
   color: #FFF;
   font-size: 30px;
   font-size: calc(16px + (30 - 16) * ((100vw - 480px) / (1600 - 480)));
+  text-decoration: none;
 }
 
 .callback__number:hover {
@@ -1125,6 +1126,7 @@ body {
   font-size: calc(24px + (48 - 24) * ((100vw - 480px) / (1400 - 480)));
   font-weight: 600;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 .taxi {
