@@ -569,10 +569,6 @@ body {
   background-color: #04bfbf;
 }
 
-.callback.is-scrolled {
-  top: 0;
-}
-
 .callback.is-scrolled .callback__img {
   display: none;
 }
