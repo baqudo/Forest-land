@@ -3,7 +3,9 @@
 	<!-- BEGIN wrapper -->
 	<div class="wrapper">
 		<a href="#" class="logo"><img src="img/logo.png" alt="logo" class="logo__img"></a>
+		
 
+		<button class="button navigation-trigger">Меню</button>
 		<ul class="navigation">
 			<li class="navigation__item"><a href="#" class="navigation__link">О проекте </a></li>
 			<li class="navigation__item"><a href="#" class="navigation__link">Преимущества </a></li>
@@ -19,9 +21,11 @@
 	<!-- BEGIN callback -->
 	<div class="callback">
 		<div class="callback__number">(098) 0 5555 00</div>
-		<button class="button callback__button js-popup-button" data-popup="callback">
+
+		<button class="button callback__button for-desktop js-popup-button" data-popup="callback">
 			{{mixins.icon('talking')}}обратный звонок
 		</button>
+		<button class="button callback__button for-mobile  js-popup-button" data-popup="callback">{{mixins.icon('talking')}}</button>
 		{# <img class="callback__img" src="img/construction-img.png" alt="construction-img"> #}
 		<div class="callback__img">
 			<div class="callback__text">Ход строительства</div>

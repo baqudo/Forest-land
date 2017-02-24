@@ -2751,14 +2751,43 @@ function sayHello() {
 
 sayHello();
 
-$(window).scroll(function () {
+$(function () {
+	//callback scroll
+
 	var $callback = $('.callback');
-	var $callbackButton = $callback.find('.callback__button');
-	if ($(this).scrollTop() > 600) {
-		$callback.addClass('is-scrolled');
-	} else {
-		$callback.removeClass('is-scrolled');
-	}
+	var $callbackButton = $callback.find('.callback__button.for-desktop');
+	var $callbackButtonMobile = $callback.find('.callback__button.for-mobile');
+
+	$(window).scroll(function () {
+
+		if ($(this).scrollTop() > 600) {
+			$callback.addClass('is-scrolled');
+		} else {
+			$callback.removeClass('is-scrolled');
+		}
+	});
+
+	var menuTrigger = $('.navigation-trigger'),
+	    menu = $('.navigation');
+
+	menuTrigger.on('click', function () {
+		menu.slideToggle();
+	});
+
+	$(window).resize(function () {
+		var wid = $(window).width();
+		if (wid > 998 && menu.is(':hidden')) {
+			menu.removeAttr('style');
+		}
+
+		if (wid < 450) {
+			$callbackButton.hide();
+			$callbackButtonMobile.show();
+		} else {
+			$callbackButton.show();
+			$callbackButtonMobile.hide();
+		}
+	});
 });
 
 // popup
@@ -2792,7 +2821,7 @@ $(function () {
 	});
 });
 
-//tabs and sliders-----------------------------------
+//tabs and sliders
 $(function () {
 	var tabContol = $('.js-tabs__controls'),
 	    contentList = $('.js-tabs__list'),

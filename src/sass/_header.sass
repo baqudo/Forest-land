@@ -7,7 +7,8 @@
 	.logo
 		float: left
 		margin-right: 3.5em
-		+r(1040)
+
+		+r(1400)
 			margin-right: 10px
 
 .logo
@@ -16,24 +17,68 @@
 	&__img
 		max-height: 100%
 		max-width: 100% 
-
+	+r(998)
+		transform: scale(0.75)
+		margin: 0 0.5em 
+	+r(400)
+		margin: 0 
+.navigation-trigger
+	display: none
+	width: auto
+	height: auto
+	padding: 0.6em 1em
+	margin-top: 13px 
+	margin-left: 25px 
+	float: left
+		// background-color: #db5a31 
+		// border: 3px solid #DB5A31 
+		// border-radius: 7px
+		// padding: 0.5em 1em
+	+r(998)
+		display: inline-block
+	+r(450)
+		margin-right: 70px 
+		float: right
 .navigation
 	display: inline-block
 	color: #f7e967
 	text-transform: uppercase
 	margin-top: 2.40em
+	+clr
 	&__item
 		display: inline-block
+		+r(1200)
+		float: left
 	&__link
 		color: #f7e967
 		display: block
 		padding: 0 0.65em 
+		+r(1325)
+			padding: 0 0.25em 
+		+r(1200)
+			padding: 0.5em 
 		&:hover
 			color: #fff
 			text-decoration: none
-	+r(980)
+	+r(1200)
+		width: 60% 
+		margin-top: 1em
+	+r(998)
 		display: none
-
+		position: absolute
+		top: 75px 
+		left: 0 
+		text-align: center 
+		width: 100% 
+		margin: 0 
+		&__item
+			float: none
+			display: block
+			background: $main-color
+			border-bottom: 1px solid #588f27
+		&__link
+			padding: 1em 
+			font-weight: bold
 .callback
 	// display: none
 	position: absolute
@@ -44,39 +89,54 @@
 	text-transform: uppercase
 	font-weight: 600
 	transition: 0.5s
+	+r(998)
+		top: 5px 
+		right: 15px 
 	&__number
-		font-family: "Open Sans"
 		font-size: 30px
+		+css-lock(16,30,480,1600)
+		+rmin(1176)
+			display: block
+		+r(1175)
+			display: none
 	&__button
 		display: block
 		font-size: 18px 
+		+css-lock(15,18,480,1600)
 		margin: 0.5em 0
-		line-height: 44px
-		// padding-left: 2em 
+		line-height: em(44,18)
+		+r(1325)
+			padding: 0 0.5em
+			width: auto
+			height: auto
+			svg
+				width: 1.5em
+				height: 1.5em
 	&__img
 		display: block
 		position: relative
-		height: 315px
+		height: em(315,18)
 		background: url(../img/construction-img.png)
 		border-radius: 7px
 		border: 6px solid rgba(255, 255, 255, 0.5)
+		+r(1175)
+			display: none
 	&__text
 		font-size: 18px
+		+css-lock(15,18,480,1600)
 		position: absolute
 		bottom: 0 
 		left: 0
 		right: 0
 		width: 100%
-		height: 63px
-		line-height: 63px 
+		height: em(63,18)
+		line-height: em(63,18)
 		background-color: #04bfbf
 	&.is-scrolled
 		.callback__number
 			display: none
 		.callback__img
 			display: none
-		.callback__button
-			margin: 0 
 
 .icon-talking
 	position: relative
@@ -86,3 +146,10 @@
 	width: 1.7em 
 	height: 1.7em 
 	transition: 0.3s
+
+.for-desktop
+	+r(450)
+		display: none
+.for-mobile
+	+rmin(450)
+		display: none
