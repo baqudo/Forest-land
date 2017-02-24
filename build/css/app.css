@@ -419,7 +419,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-  height: 53.77778em;
+  height: 100%;
+  height: 100vh;
 }
 
 .main__button {
@@ -477,10 +478,12 @@ body {
   display: none;
   width: auto;
   height: auto;
-  padding: 0.6em 1em;
+  padding: 0 1em;
   margin-top: 13px;
   margin-left: 25px;
   float: left;
+  line-height: 2.44em;
+  height: 48px;
 }
 
 .navigation {
@@ -503,6 +506,7 @@ body {
 }
 
 .navigation__link {
+  text-decoration: none;
   color: #f7e967;
   display: block;
   padding: 0 0.65em;
@@ -557,6 +561,10 @@ body {
   height: 3.5em;
   line-height: 3.5em;
   background-color: #04bfbf;
+}
+
+.callback.is-scrolled {
+  top: 5px;
 }
 
 .callback.is-scrolled .callback__number {
@@ -794,8 +802,10 @@ body {
 }
 
 .main-plan {
-  font-size: calc(14px + (18 - 14) * ((100vw - 480px) / (1600 - 480)));
-  max-height: 52.11111em;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  margin-bottom: -1%;
 }
 
 .main-plan img {
@@ -1273,7 +1283,7 @@ body {
   float: left;
   width: 50%;
   position: relative;
-  max-height: 300px;
+  height: 16.66667em;
 }
 
 .galleries__item:hover {
@@ -1283,16 +1293,20 @@ body {
 .galleries__bg {
   max-width: 100%;
   max-height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .galleries__block {
   height: 100%;
-  padding: 1em 0;
   text-align: center;
   transition: 0.5s;
   background-color: rgba(4, 191, 191, 0.5);
   position: absolute;
+  top: 0;
+  left: 0;
   bottom: 0;
+  right: 0;
   width: 100%;
 }
 
@@ -1397,9 +1411,6 @@ body {
   .benefit__title{
     font-size: 30px;
   }
-  .main-plan{
-    font-size: 18px;
-  }
   .tabs-controls__item{
     font-size: 18px;
   }
@@ -1427,7 +1438,7 @@ body {
 
 @media only screen and (max-width: 1440px){
   .wrapper{
-    padding: 0 5px;
+    padding: 0 10px;
   }
 }
 
@@ -1597,6 +1608,20 @@ body {
   }
 }
 
+@media only screen and (max-width: 850px){
+  .big-logo{
+    top: 5%;
+    left: -35px;
+    -webkit-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    transform: scale(0.6);
+  }
+  .callback__button svg{
+    width: 1.3em;
+    height: 1.3em;
+  }
+}
+
 @media only screen and (max-width: 805px){
   .tabs__item{
     max-width: 100%;
@@ -1681,6 +1706,31 @@ body {
   }
 }
 
+@media only screen and (max-width: 500px){
+  .big-logo{
+    top: 2%;
+    left: -70px;
+    -webkit-transform: scale(0.4);
+    -ms-transform: scale(0.4);
+    transform: scale(0.4);
+  }
+}
+
+@media only screen and (max-width: 480px){
+  .benefit{
+    margin-top: 0.5em;
+  }
+  .benefit__icon{
+    -webkit-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    transform: scale(0.5);
+    min-height: 100px;
+  }
+  .benefit__text{
+    margin-top: 0.5em;
+  }
+}
+
 @media (max-width: 480px){
   body{
     font-size: 15px;
@@ -1709,9 +1759,6 @@ body {
   .benefit__title{
     font-size: 20px;
   }
-  .main-plan{
-    font-size: 14px;
-  }
   .callback-pop-up__inner{
     font-size: 14px;
   }
@@ -1738,21 +1785,6 @@ body {
   }
   .room__area{
     font-size: 18px;
-  }
-}
-
-@media only screen and (max-width: 480px){
-  .benefit{
-    margin-top: 0.5em;
-  }
-  .benefit__icon{
-    -webkit-transform: scale(0.5);
-    -ms-transform: scale(0.5);
-    transform: scale(0.5);
-    min-height: 100px;
-  }
-  .benefit__text{
-    margin-top: 0.5em;
   }
 }
 

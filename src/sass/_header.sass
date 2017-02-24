@@ -26,10 +26,12 @@
 	display: none
 	width: auto
 	height: auto
-	padding: 0.6em 1em
+	padding: 0 1em
 	margin-top: 13px 
 	margin-left: 25px 
 	float: left
+	line-height: 2.44em 
+	height: 48px
 		// background-color: #db5a31 
 		// border: 3px solid #DB5A31 
 		// border-radius: 7px
@@ -39,6 +41,7 @@
 	+r(450)
 		margin-right: 70px 
 		float: right
+		
 .navigation
 	display: inline-block
 	color: #f7e967
@@ -50,6 +53,7 @@
 		+r(1200)
 		float: left
 	&__link
+		text-decoration: none
 		color: #f7e967
 		display: block
 		padding: 0 0.65em 
@@ -112,6 +116,10 @@
 			svg
 				width: 1.5em
 				height: 1.5em
+		+r(850)
+			svg
+				width: 1.3em
+				height: 1.3em
 	&__img
 		display: block
 		position: relative
@@ -133,6 +141,7 @@
 		line-height: em(63,18)
 		background-color: #04bfbf
 	&.is-scrolled
+		top: 5px 
 		.callback__number
 			display: none
 		.callback__img
