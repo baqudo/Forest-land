@@ -2768,11 +2768,19 @@ $(function () {
 	});
 
 	var menuTrigger = $('.navigation-trigger'),
-	    menu = $('.navigation');
+	    menu = $('.navigation'),
+	    menuItems = menu.children().children(),
+	    $width = $(window).width();
 
 	menuTrigger.on('click', function () {
 		menu.slideToggle();
 	});
+
+	if ($width < 998) {
+		menuItems.on('click', function () {
+			menu.slideUp();
+		});
+	}
 
 	$(window).resize(function () {
 		var wid = $(window).width();
@@ -2925,15 +2933,19 @@ $(function () {
 
 $(function () {
 	var $link = $('.js-scroll-link');
+	var headerHeight = $('.header').height();
+	// console.log(headerHeight);
 
 	$link.on("click", function (event) {
 
 		event.preventDefault();
 		//забираем идентификатор блока с атрибута href
 		var id = $(this).attr('href'),
+		    $height = headerHeight - 3,
 
 		//узнаем высоту от начала страницы до блока на который ссылается якорь
-		top = $(id).offset().top - 99;
+		top = $(id).offset().top - $height;
+
 		//анимируем переход на расстояние - top за 1300 мс
 		$('body,html').animate({ scrollTop: top }, 1300);
 	});
