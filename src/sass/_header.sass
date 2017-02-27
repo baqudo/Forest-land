@@ -178,3 +178,14 @@
 .for-mobile
 	+rmin(450)
 		display: none
+
+@media only screen and (orientation: landscape) and (max-height: 420px)
+	.navigation 
+		text-align: center
+		margin-top: 3px 
+		&__item
+			display: inline-block
+			width: 49% 
+			border: 2px solid #588f27
+			margin: 1px
+

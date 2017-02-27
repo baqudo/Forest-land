@@ -59,19 +59,46 @@ $(function () {
 		var $this = $(this),
 			popupName = $this.data('popup'),
 		// console.log(popupName);
-			popupWindow = $('#popup-'+popupName),
+			popupWindow = $('#popup-' + popupName),
 		// console.log(popupWindow);
 			popupClose = popupWindow.find('.js-popup-close'),
-			popupSlider = popupWindow.find('.js-popup-slider');
+			popupSlider = popupWindow.children().find('.js-popup-slider'),
+			slickOpt = {
+				infinite: false
+			};
 
 		popupWindow.fadeIn(duration);
 
-		if (!popupSlider.slick()) {
+		if (!popupSlider.hasClass('slick-slider')) {
 			// console.log(popupSlider);
-			$('.js-popup-slider').slick({
-				infinite: false
-			});
+			popupSlider.slick(slickOpt);
 		}
+
+		var currentSlide = popupSlider.slick('slickCurrentSlide');
+		var slides = popupSlider.children();
+		// var prevSlide = $('.js-popup-slider').slick('slickPrevSlide');
+		// var nextSlide = $('.js-popup-slider').slick('slickNextSlide');
+		var pages = $('.pages .pages__item');
+		var currentPage = pages.filter('.is-current-page');
+		var lastPage = pages.filter('.is-last-page');
+		console.log(lastPage);
+
+		
+		// .html(currentSlide + 1);
+		// console.log(pages);
+		// console.log(currentSlide);
+		$('.js-popup-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+			// currentPage.html(currentSlide + 1);
+			console.log(nextSlide + 1);
+			// console.log(prevSlide);
+		});
+
+		$('.js-popup-slider').on('afterChange', function(event, slick, currentSlide){
+			currentPage.html(currentSlide + 1);
+
+		});
+
+
 
 		popupClose.on('click',function () {
 			popupWindow.fadeOut(duration);
