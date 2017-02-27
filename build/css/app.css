@@ -513,7 +513,7 @@ body {
   padding: 0 0.65em;
 }
 
-.navigation__link:hover {
+.navigation__link:hover, .navigation__link:active, .navigation__link:focus {
   color: #fff;
   text-decoration: none;
 }
@@ -718,11 +718,7 @@ body {
 }
 
 .benefits {
-  padding-bottom: 3em;
-}
-
-.benefits__title {
-  margin-top: 1.13em;
+  padding: 3em 0;
 }
 
 .benefits__wrapper {
@@ -805,11 +801,10 @@ body {
   position: relative;
   margin: 0;
   padding: 0;
-  height: auto;
-  margin-bottom: -1%;
 }
 
-.main-plan img {
+.main-plan__img {
+  display: block;
   max-width: 100%;
   max-height: 100%;
 }
@@ -820,30 +815,6 @@ body {
   left: 0;
   right: 0;
   margin-top: 1.1em;
-}
-
-.footnote {
-  position: relative;
-  display: inline-block;
-  padding: 0.5em 0.75em;
-  background-color: #f7921e;
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 20px;
-}
-
-.footnote:before {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  border: 22px solid #f7921e;
-  border-top-width: 16px;
-  border-bottom-width: 0;
-  border-left-color: transparent;
-  border-right-color: transparent;
 }
 
 .callback-pop-up {
@@ -1031,7 +1002,7 @@ body {
 }
 
 .about-builder {
-  margin: 4.72222em 0 3.05556em;
+  padding: 4.72222em 0 3.05556em;
 }
 
 .about-builder .wrapper {
@@ -1539,7 +1510,7 @@ body {
 
 @media only screen and (max-width: 1024px){
   .benefits{
-    padding-bottom: 1em;
+    padding: 1em 0;
   }
   .about-builder .wrapper{
     padding: 0 20px;
@@ -1702,7 +1673,7 @@ body {
 
 @media only screen and (max-width: 715px){
   .about-builder{
-    margin: 30px 0;
+    padding: 30px 0;
   }
   .about-builder__left{
     margin-right: 20px;

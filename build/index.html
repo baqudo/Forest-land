@@ -17,15 +17,15 @@
       <header class="header">
         <!-- BEGIN wrapper -->
         <div class="wrapper">
-          <a href="#" class="logo"><img src="img/logo.png" alt="logo" class="logo__img"></a> <button class="button navigation-trigger">Меню</button>
+          <a href="#main" class="logo js-scroll-link"><img src="img/logo.png" alt="logo" class="logo__img"></a> <button class="button navigation-trigger">Меню</button>
           <ul class="navigation">
-            <li class="navigation__item"><a href="#" class="navigation__link">О проекте </a></li>
-            <li class="navigation__item"><a href="#" class="navigation__link">Преимущества </a></li>
-            <li class="navigation__item"><a href="#" class="navigation__link">Расположение</a></li>
-            <li class="navigation__item"><a href="#" class="navigation__link">планировки</a></li>
-            <li class="navigation__item"><a href="#" class="navigation__link">Галерея</a></li>
-            <li class="navigation__item"><a href="#" class="navigation__link">Застройщик</a></li>
-            <li class="navigation__item"><a href="#" class="navigation__link">Контакты</a></li>
+            <li class="navigation__item"><a href="#about-complex" class="navigation__link js-scroll-link">О проекте </a></li>
+            <li class="navigation__item"><a href="#benefits" class="navigation__link js-scroll-link">Преимущества </a></li>
+            <li class="navigation__item"><a href="#location" class="navigation__link js-scroll-link">Расположение</a></li>
+            <li class="navigation__item"><a href="#apartments" class="navigation__link js-scroll-link">планировки</a></li>
+            <li class="navigation__item"><a href="#galleries" class="navigation__link js-scroll-link">Галерея</a></li>
+            <li class="navigation__item"><a href="#about-builder" class="navigation__link js-scroll-link">Застройщик</a></li>
+            <li class="navigation__item"><a href="#contacts" class="navigation__link js-scroll-link">Контакты</a></li>
           </ul>
         </div>
         <!-- END wrapper -->
@@ -45,17 +45,17 @@
       </header>
       <!-- END header -->
       <!-- BEGIN main -->
-      <div class="main">
+      <div id="main" class="main">
         <!-- BEGIN complex__img -->
         <div class="main__img">
           <!-- BEGIN big-logo -->
           <div class="big-logo"> <img class="big-logo__img" src="img/logo-big.png" alt="big-logo"> </div>
-          <!-- END big-logo --><button class="button main__button">узнать больше</button> </div>
+          <!-- END big-logo --><button class="button main__button js-scroll-link" href="#about-complex">узнать больше</button> </div>
         <!-- END complex__img -->
       </div>
       <!-- END main -->
       <!-- BEGIN about-complex primary -->
-      <div class="about-complex primary">
+      <div id="about-complex" class="about-complex primary">
         <!-- BEGIN wrapper -->
         <div class="wrapper">
           <h2 class="title-h2">О жилоМ комплексЕ</h2>
@@ -68,10 +68,10 @@
           </div>
           <!-- END primary__text -->
         </div>
-        <!-- END wrapper --><button class="primary-button">О застройщике</button> </div>
+        <!-- END wrapper --><button class="primary-button js-scroll-link" href="#about-builder">О застройщике</button> </div>
       <!-- END about-complex primary -->
       <!-- BEGIN benefits -->
-      <div class="benefits">
+      <div id="benefits" class="benefits">
         <!-- BEGIN wrapper -->
         <div class="wrapper">
           <h2 class="title-h2 is-black benefits__title">Преимущества</h2>
@@ -142,18 +142,18 @@
       </div>
       <!-- END benefits -->
       <!-- BEGIN location -->
-      <div class="location">
+      <div id="location" class="location">
         <h2 class="title-h2 title-h2_blue">Расположение</h2>
         <div class="map" id="map"></div>
       </div>
       <!-- END location -->
       <!-- BEGIN main-plan -->
-      <div class="main-plan"> <img src="img/master-plan.jpg" alt="masterplan">
+      <div id="main-plan" class="main-plan"> <img class="main-plan__img" src="img/master-plan.jpg" alt="masterplan">
         <h2 class="title-h2 main-plan__title">генплан</h2>
       </div>
       <!-- END main-plan -->
       <!-- BEGIN apartments primary -->
-      <div class="apartments primary">
+      <div id="apartments" class="apartments primary">
         <h2 class="title-h2">планировки</h2>
         <!-- BEGIN room-filter -->
         <div class="room-filter tabs">
@@ -258,7 +258,7 @@
       </div>
       <!-- END apartments primary -->
       <!-- BEGIN galleries -->
-      <div class="galleries">
+      <div id="galleries" class="galleries">
         <!-- BEGIN galleries__item gallery -->
         <div class="galleries__item gallery js-popup-button" data-popup="gallery"> <img class="galleries__bg" src="img/galery-img.png" alt="galeryimg">
           <!-- BEGIN galleries__block -->
@@ -286,7 +286,7 @@
       </div>
       <!-- END galleries -->
       <!-- BEGIN about-builder -->
-      <div class="about-builder">
+      <div id="about-builder" class="about-builder">
         <!-- BEGIN wrapper -->
         <div class="wrapper">
           <!-- BEGIN to-left -->
@@ -315,7 +315,7 @@
         <!-- END wrapper --><button class="primary-button">ЗАКАЗАть</button> </div>
       <!-- END transfer primary  -->
       <!-- BEGIN contacts -->
-      <div class="contacts">
+      <div id="contacts" class="contacts">
         <!-- BEGIN wrapper -->
         <div class="wrapper">
           <!-- BEGIN contacts__inner -->
@@ -376,11 +376,12 @@
         <h3 class="title-h2">ГАЛЕРЕЯ</h3> <button class="pop-up__close js-popup-close"></button>
         <div class="pop-up__slider js-popup-slider">
           <div><img src="img/galpop.png" alt="galpop"></div>
-          <div><img src="http://placehold.it/1500x500" alt="galpop"></div>
+          <div><img src="img/fland.jpg" alt="fland"></div>
           <div><img src="img/galpop.png" alt="galpop"></div>
-          <div><img src="http://placehold.it/1500x500" alt="galpop"></div>
+          <div><img src="img/fland.jpg" alt="fland"></div>
           <div><img src="img/galpop.png" alt="galpop"></div>
-          <div><img src="http://placehold.it/1500x500" alt="galpop"></div>
+          <div><img src="img/fland.jpg" alt="fland"></div>
+          <div><img src="img/galpop.png" alt="galpop"></div>
         </div>
         <div class="pop-up__pagination pages"> <a href="#" class="pages__item is-first-page">1</a> <span>. . .</span> <a href="#" class="pages__item is-previos-page">3</a> <a href="#" class="pages__item is-current-page is-active">4</a> <a href="#" class="pages__item is-next-page">5</a> <span>. . .</span>          <a href="#" class="pages__item is-last-page">7</a> </div>
       </div>
