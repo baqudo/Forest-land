@@ -1120,7 +1120,7 @@ body {
   display: block;
   color: #db5a31;
   font-size: 48px;
-  font-size: calc(24px + (48 - 24) * ((100vw - 480px) / (1400 - 480)));
+  font-size: calc(28px + (48 - 28) * ((100vw - 480px) / (1600 - 480)));
   font-weight: 600;
   text-transform: uppercase;
   text-decoration: none;
@@ -1388,9 +1388,6 @@ body {
 }
 
 @media (min-width: 1400px){
-  .contacts__number{
-    font-size: 48px;
-  }
   .room__title{
     font-size: 24px;
   }
@@ -1426,6 +1423,9 @@ body {
   }
   .benefit__title{
     font-size: 30px;
+  }
+  .contacts__number{
+    font-size: 48px;
   }
   .tabs-controls__item{
     font-size: 18px;
@@ -1696,19 +1696,6 @@ body {
   }
 }
 
-@media only screen and (orientation: landscape) and (max-height: 420px){
-  .navigation{
-    text-align: center;
-    margin-top: 3px;
-  }
-  .navigation__item{
-    display: inline-block;
-    width: 49%;
-    border: 2px solid #588f27;
-    margin: 1px;
-  }
-}
-
 @media only screen and (max-width: 715px){
   .about-builder{
     margin: 30px 0;
@@ -1834,7 +1821,7 @@ body {
     font-size: 18px;
   }
   .contacts__number{
-    font-size: 24px;
+    font-size: 28px;
   }
   .taxi__title{
     font-size: 18px;
@@ -1868,6 +1855,19 @@ body {
   .pop-up__close{
     top: 10px;
     right: 10px;
+  }
+}
+
+@media only screen and (orientation: landscape) and (max-height: 420px){
+  .navigation{
+    text-align: center;
+    margin-top: 3px;
+  }
+  .navigation__item{
+    display: inline-block;
+    width: 49%;
+    border: 2px solid #588f27;
+    margin: 1px;
   }
 }
 
