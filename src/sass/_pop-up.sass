@@ -10,8 +10,8 @@
 	background-color: rgba(0, 0, 0, 0.8)
 	&__block
 		font-size: 18px 
-		+css-lock(18,24,480,960)
-		padding: 3em 0
+		+css-lock(18,24,480,1600)
+		// padding: 3em 0
 		max-height: 700px
 	&__slider
 		position: relative
@@ -59,7 +59,7 @@
 				button
 					text-align: center
 					font-size: 24px
-					+css-lock(18,24,480,960)
+					+css-lock(18,24,480,1600)
 					line-height: em(20,24)
 					text-transform: uppercase
 					color: #FFF 
@@ -88,17 +88,42 @@
 
 @media only screen and (orientation: landscape) and (max-height: 420px)
 	.pop-up
+		padding: 0 
+		margin: 0 
+		height: 100% 
 		&__block
 			padding: 0
+			top: 0
+			bottom: 0 
+			height: 100% 
 			.title-h2
 			 display: none
 		&__slider
 			margin: 0 
-			max-height: 95%
-			max-width: 100%   
+			height: 100%
+			max-width: 100%
+			img
+				margin: 1.5% auto 
+			.slick-dots
+				top: 90% 
 		&__close
 			position: absolute
 			top: 0
 			right: 0
 			z-index: 999 
 			+scale(0.7)
+	#popup-video
+		.pop-up__block
+			// height: 300px
+		.pop-up__slider
+			max-height: 85%
+			max-width: 80%
+			margin: 5% auto
+			.slick-arrow
+				+scale(0.65)
+			.slick-next
+				right: -55px
+			.slick-prev
+				left: -55px 
+			.slick-dots
+				display: none
