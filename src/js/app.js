@@ -6,9 +6,8 @@
 
 sayHello();
 
-
+//----------------------------callback scroll----------------------------
 $(function () {
-	//callback scroll
 
 	var $callback = $('.callback');
 	var $callbackButton = $callback.find('.callback__button.for-desktop');
@@ -58,7 +57,7 @@ $(function () {
 
 
 
-// popup
+// ----------------popup open/close popup-slider initial----------------
 $(function () {
 	var popupTrigger = $('.js-popup-button'),
 		duration = 300;
@@ -83,32 +82,6 @@ $(function () {
 			popupSlider.slick(slickOpt);
 		}
 
-		var currentSlide = popupSlider.slick('slickCurrentSlide');
-		var slides = popupSlider.children();
-		// var prevSlide = $('.js-popup-slider').slick('slickPrevSlide');
-		// var nextSlide = $('.js-popup-slider').slick('slickNextSlide');
-		var pages = $('.pages .pages__item');
-		var currentPage = pages.filter('.is-current-page');
-		var lastPage = pages.filter('.is-last-page');
-		console.log(lastPage);
-
-		
-		// .html(currentSlide + 1);
-		// console.log(pages);
-		// console.log(currentSlide);
-		$('.js-popup-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-			// currentPage.html(currentSlide + 1);
-			console.log(nextSlide + 1);
-			// console.log(prevSlide);
-		});
-
-		$('.js-popup-slider').on('afterChange', function(event, slick, currentSlide){
-			currentPage.html(currentSlide + 1);
-
-		});
-
-
-
 		popupClose.on('click',function () {
 			popupWindow.fadeOut(duration);
 		})
@@ -117,7 +90,7 @@ $(function () {
 });
 
 
-//tabs and sliders
+//---------------------tabs and sliders---------------------
 $(function () {
 	var tabContol = $('.js-tabs__controls'),
 		contentList = $('.js-tabs__list'),
@@ -176,35 +149,37 @@ $(function () {
 
 	  $sliders.filter('.is-active').slick(slickOpt);
 
-	  // function	swapTab() {
-			// var $target = $(this),
-			// 	itemPosition = $target.index();
+	  function	swithTab() {
+			var $target = $(this),
+				itemPosition = $target.index();
 
-			// $target.addClass('is-active').siblings().removeClass('is-active');
-			// contentItem.eq(itemPosition).addClass('is-active').siblings().removeClass('is-active');
-	  // }
+			$target.addClass('is-active').siblings().removeClass('is-active');
+			contentItem.eq(itemPosition).addClass('is-active').siblings().removeClass('is-active');
+	  }
 
 
 		function initSlider(event){
 			var $target = $(this),
 				itemPosition = $target.index(),
-				dataTarget = $target.data('tabs'); // нужно добавить дата-значения (если их нет) что бы связывать таб с блоком(слайдером)
+				dataTarget = $target.data('tabs');
 
 			$target.addClass('is-active').siblings().removeClass('is-active');
 			contentItem.eq(itemPosition).addClass('is-active').siblings().removeClass('is-active');
 
 			var $slider = $sliders.filter('[data-tabs="'+dataTarget+'"]');
-			// тут сделать проверку на иницализацию слайдера - если инициализирован, то не нужно инициализировать
+
 			if(!$slider.slick(slickOpt)) {
 				$slider.slick(slickOpt);
 			}
 		}
 
-	// tabContol.one('click', initSlider);
-	tabContol.on('click', initSlider);
+	tabContol.one('click', initSlider);
+	tabContol.on('click', swithTab);
 
 });
 
+
+// -------------------------link scrolling-------------------------
 $(function () {
 	var $link = $('.js-scroll-link');
 	var headerHeight = $('.header').height();
@@ -213,13 +188,11 @@ $(function () {
 	$link.on("click", function(event) {
 
     event.preventDefault();
-    //забираем идентификатор блока с атрибута href
+
     var id  = $(this).attr('href'),
         $height = headerHeight - 3,
-    //узнаем высоту от начала страницы до блока на который ссылается якорь
         top = $(id).offset().top - $height;
 
-    //анимируем переход на расстояние - top за 1300 мс
     $('body,html').animate({scrollTop: top}, 1300);
 	});
 });
