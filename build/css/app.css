@@ -1624,8 +1624,12 @@ body {
   .tabs__item{
     max-width: 100%;
   }
+  .slider{
+    padding: 0 10px;
+  }
   .room{
-    margin: 0 5px;
+    margin: 0 10px;
+    max-width: 300px;
   }
   .galleries__item{
     float: none;
