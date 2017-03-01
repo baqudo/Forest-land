@@ -900,21 +900,18 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.pop-up .title-h2 {
-  margin-top: 1em;
-}
-
 .pop-up__block {
-  width: 100%;
-  max-height: 100%;
-  position: relative;
+  font-size: 18px;
+  font-size: calc(18px + (24 - 18) * ((100vw - 480px) / (960 - 480)));
+  padding: 3em 0;
+  max-height: 700px;
 }
 
 .pop-up__slider {
   position: relative;
   max-width: 1312px;
   height: 700px;
-  max-height: 750px;
+  max-height: 700px;
   margin: 1em auto;
   background-color: #FFF;
 }
@@ -950,8 +947,31 @@ body {
   border-right-width: 0;
 }
 
-.pop-up__slide {
-  max-height: 90%;
+.pop-up__slider .slick-dots {
+  top: 104%;
+}
+
+.pop-up__slider .slick-dots li.slick-active button {
+  color: #a9cf54;
+  text-decoration: underline;
+}
+
+.pop-up__slider .slick-dots li button {
+  text-align: center;
+  font-size: 24px;
+  font-size: calc(18px + (24 - 18) * ((100vw - 480px) / (960 - 480)));
+  line-height: 0.83333em;
+  text-transform: uppercase;
+  color: #FFF;
+}
+
+.pop-up__slider .slick-dots li button:before {
+  display: none;
+}
+
+.pop-up__slider .slick-dots li button:hover {
+  color: #a9cf54;
+  text-decoration: none;
 }
 
 .pop-up__close {
@@ -976,29 +996,6 @@ body {
   width: 15px;
   height: 16px;
   background-position: -402px -225px;
-}
-
-.pages {
-  text-align: center;
-  font-size: 24px;
-  font-size: calc(18px + (24 - 18) * ((100vw - 480px) / (960 - 480)));
-  line-height: 0.83333em;
-  text-transform: uppercase;
-}
-
-.pages__item {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.pages__item:hover {
-  color: #a9cf54;
-  text-decoration: none;
-}
-
-.pages__item.is-active {
-  color: #a9cf54;
-  text-decoration: underline;
 }
 
 .about-builder {
@@ -1333,7 +1330,10 @@ body {
 }
 
 @media (min-width: 960px){
-  .pages{
+  .pop-up__block{
+    font-size: 24px;
+  }
+  .pop-up__slider .slick-dots li button{
     font-size: 24px;
   }
 }
@@ -1792,7 +1792,10 @@ body {
   .callback-pop-up__title{
     font-size: 18px;
   }
-  .pages{
+  .pop-up__block{
+    font-size: 18px;
+  }
+  .pop-up__slider .slick-dots li button{
     font-size: 18px;
   }
   .contacts__address{
@@ -1846,6 +1849,26 @@ body {
     width: 49%;
     border: 2px solid #588f27;
     margin: 1px;
+  }
+  .pop-up__block{
+    padding: 0;
+  }
+  .pop-up__block .title-h2{
+    display: none;
+  }
+  .pop-up__slider{
+    margin: 0;
+    max-height: 95%;
+    max-width: 100%;
+  }
+  .pop-up__close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    -webkit-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    transform: scale(0.7);
   }
 }
 

@@ -8,21 +8,16 @@
 	width: 100%
 	height: 100%
 	background-color: rgba(0, 0, 0, 0.8)
-	.title-h2
-		margin-top: 1em 
-
 	&__block
-		width: 100% 
-		// height: 700px
-		max-height: 100% 
-		position: relative
-		// z-index: 9999999999
-		
+		font-size: 18px 
+		+css-lock(18,24,480,960)
+		padding: 3em 0
+		max-height: 700px
 	&__slider
 		position: relative
 		max-width: 1312px
 		height: 700px
-		max-height: 750px 
+		max-height: 700px 
 		margin: 1em auto
 		background-color: #FFF 
 		div
@@ -54,8 +49,27 @@
 				right: -66px
 		+r(1025)
 			width: 100% 
+			
+		.slick-dots
+			top: 104%
+			li 
+				&.slick-active button
+					color: #a9cf54
+					text-decoration: underline
+				button
+					text-align: center
+					font-size: 24px
+					+css-lock(18,24,480,960)
+					line-height: em(20,24)
+					text-transform: uppercase
+					color: #FFF 
+					&:before
+						display: none
+					&:hover
+						color: #a9cf54
+						text-decoration: none
 	&__slide
-		max-height: 90% 
+		// max-height: 90% 
 	&__close
 		position: absolute
 		right: 10%
@@ -68,23 +82,23 @@
 			content: ""
 			+vcenter
 			+s(close)
-
 		+r(360)
 			top: 10px
 			right: 10px
-.pages
-	text-align: center
-	font-size: 24px
-	+css-lock(18,24,480,960)
-	line-height: em(20,24)
-	text-transform: uppercase
 
-	&__item
-		color: #ffffff
-		text-decoration: none
-		&:hover
-			color: #a9cf54
-			text-decoration: none
-		&.is-active
-			color: #a9cf54
-			text-decoration: underline
+@media only screen and (orientation: landscape) and (max-height: 420px)
+	.pop-up
+		&__block
+			padding: 0
+			.title-h2
+			 display: none
+		&__slider
+			margin: 0 
+			max-height: 95%
+			max-width: 100%   
+		&__close
+			position: absolute
+			top: 0
+			right: 0
+			z-index: 999 
+			+scale(0.7)

@@ -72,7 +72,8 @@ $(function () {
 			popupClose = popupWindow.find('.js-popup-close'),
 			popupSlider = popupWindow.children().find('.js-popup-slider'),
 			slickOpt = {
-				infinite: false
+				infinite: false,
+				dots: true
 			};
 
 		popupWindow.fadeIn(duration);
@@ -175,13 +176,13 @@ $(function () {
 
 	  $sliders.filter('.is-active').slick(slickOpt);
 
-	  function	swapTab() {
-			var $target = $(this),
-				itemPosition = $target.index();
+	  // function	swapTab() {
+			// var $target = $(this),
+			// 	itemPosition = $target.index();
 
-			$target.addClass('is-active').siblings().removeClass('is-active');
-			contentItem.eq(itemPosition).addClass('is-active').siblings().removeClass('is-active');
-	  }
+			// $target.addClass('is-active').siblings().removeClass('is-active');
+			// contentItem.eq(itemPosition).addClass('is-active').siblings().removeClass('is-active');
+	  // }
 
 
 		function initSlider(event){
@@ -199,8 +200,8 @@ $(function () {
 			}
 		}
 
-	tabContol.one('click', initSlider);
-	tabContol.on('click', swapTab);
+	// tabContol.one('click', initSlider);
+	tabContol.on('click', initSlider);
 
 });
 
