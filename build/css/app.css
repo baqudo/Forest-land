@@ -1201,7 +1201,9 @@ body {
 }
 
 .room {
-  margin: 0 1%;
+  margin: 0 25px;
+  max-width: 338px;
+  width: 100%;
 }
 
 .room__block {
@@ -1623,7 +1625,7 @@ body {
     max-width: 100%;
   }
   .room{
-    margin: 0 0.5%;
+    margin: 0 5px;
   }
   .galleries__item{
     float: none;

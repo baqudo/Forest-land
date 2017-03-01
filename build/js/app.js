@@ -2841,6 +2841,7 @@ $(function () {
 		infinite: false,
 		slidesToShow: 3,
 		slidesToScroll: 1,
+		variableWidth: true,
 		responsive: [{
 			breakpoint: 1350,
 			settings: {
